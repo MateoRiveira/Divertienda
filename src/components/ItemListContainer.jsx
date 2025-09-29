@@ -1,18 +1,48 @@
+import { useEffect, useState } from "react"
+import Item from "./Item"
+import getProducts, { getProductbyCategory } from "../data/productsapi"
+import { useParams } from "react-router"
 
-function ItemListContainer(props){
-    return(
-        <>
+
+export default function ItemListContainer(props){
+    const [products, setProducts] = useState([])
+    const {categoryParam} = useParams()
+    getProductbyCategory(categoryParam)
+
+    useEffect(() => {
+        if(categoryParam === undefined){
+        console.log("1. Peticion de Datos")
+        const promiseData = getProducts()
+        promiseData.then((respuesta) => {
+            console.log ("3. Datos Recibidos...", respuesta)
+            setProducts(respuesta)
         
-    <div>
-      {props.greetings && <h1 className="mensaje">{props.greetings}</h1>}
-      {props.title && <h2>{props.title}</h2>}
-      {props.image && <img src={props.image} alt={props.title} />}
-      {props.price && <p>Precio: {props.price} USD</p>}
-    </div>
+        }).catch((error)=> alert(`Error ${error}`))}
 
+        else {
+            getProductbyCategory(categoryParam).then(response => setProducts(response))
+        }
+    
+    }, [categoryParam])
+    
+    return(
+    <>    
+    <section>
+        <h2>{props.greeting}</h2>
+        <p>Nuestros Productos</p>
+        <div>
+        {
+            products.map( function(item)
+        {return <Item
+         key={item.id}
+         {...item}/>})
+        }
 
-        </>
+        </div>
+
+    </section>
+
+    </>
     )
 }
 
-export default ItemListContainer

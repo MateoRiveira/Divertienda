@@ -1,17 +1,34 @@
 import CartWidget from "./CartWidget"
+import { Link } from "react-router"
 
 
-function NavBar(){
+export default function NavBar(){
+       
+        
+
     return(
         <>
         <nav className="navbar">
 
-        <h1 className="title">Divertienda</h1>
+         <Link to="/"><h1 className="title">Divertienda</h1></Link>
         <ul className="list">
-            <a href="#"><li>Videojuegos</li></a>
-            <a href="#"><li>Consolas</li></a>
-            <a href="#"><li>Computadoras</li></a>
-            <CartWidget/>
+
+            <Link to="category/Videojuegos">
+            <li>Videojuegos</li>       
+            </Link>
+            
+            <Link to="category/Consolas">
+            <li>Consolas</li>
+            </Link>
+
+            <Link to="category/Computadoras">
+            <li>Computadoras</li>
+            </Link>
+            
+            
+            <Link to="/carrito"><CartWidget/></Link>
+               
+            
         </ul>
 
         </nav>
@@ -20,4 +37,3 @@ function NavBar(){
     )
 }
 
-export default NavBar
