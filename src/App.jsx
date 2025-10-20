@@ -1,18 +1,20 @@
-import { useState } from 'react'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import {BrowserRouter, Routes, Route} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
+import { CartProvider } from './Context/CartContext'
 
 
 
 export default function App() {
    
-  
+
+
   return (
     
     <>
+    <CartProvider>
     <BrowserRouter>
 
     <NavBar/>
@@ -22,7 +24,7 @@ export default function App() {
       path='/' 
       element={<ItemListContainer greeting="Bienvenidos a Divertienda"/>}/>
 
-      <Route 
+      <Route  
       path='/carrito' 
       element={<h1>Carrito de Compras</h1>}/>
 
@@ -32,7 +34,7 @@ export default function App() {
 
       <Route
        path='/category/:categoryParam'
-       element={<ItemListContainer greeting="Categorias de Productos"/>}
+       element={<ItemListContainer greeting="Categorias de Productos"/>} 
       />
 
       <Route 
@@ -54,7 +56,7 @@ export default function App() {
     </Routes>
 
     </BrowserRouter>
-
+    </CartProvider>
 
     </>
   )
