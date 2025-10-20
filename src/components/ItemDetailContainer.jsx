@@ -9,7 +9,7 @@ import { useContext } from "react";
 
 export default function ItemDetailContainer() {
     const {idParam} = useParams()
-    const [product, Setproduct] = useState({});
+    const [product, Setproduct] = useState({loading: true});
     const {addItem} = useContext(CartContext)
     
     useEffect(() => {
@@ -17,6 +17,12 @@ export default function ItemDetailContainer() {
         .then(response => Setproduct(response))
         .catch(error => alert(error))
     },[])
+
+    if (product.loading)
+    {
+        return <h2>Cargando</h2>
+
+    }
 
 
     return(
