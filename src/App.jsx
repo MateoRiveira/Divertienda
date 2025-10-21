@@ -3,18 +3,21 @@ import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import {BrowserRouter, Routes, Route} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import { CartProvider } from './Context/CartContext' 
+import { createContext } from 'react'
 
 
+const cartContext = createContext()
+const CartProvider = cartContext.Provider
 
 export default function App() {
    
 
 
+
   return (
     
     <>
-    <CartProvider>
+    <CartProvider value="Hola Context">
     <BrowserRouter>
 
     <NavBar/>
@@ -63,4 +66,4 @@ export default function App() {
 }
 
 
-
+export {cartContext}

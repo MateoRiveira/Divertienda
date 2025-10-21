@@ -1,12 +1,11 @@
 import { useContext } from "react"
-import { CartContext } from "../Context/CartContext"
-function CartWidget(){
-    const {countCartItems}= useContext(CartContext)
+import { cartContext } from "../App"
+export default function CartWidget(){
+    const valueContext = useContext(cartContext)
     return(
         <>
-        <button className="cart"><span>🛒 {countCartItems() }</span></button>
+        <button className="cart"><span>🛒 {valueContext}</span></button>
         </>
     )
 }
 
-export default CartWidget

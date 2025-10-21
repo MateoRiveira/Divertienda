@@ -2,7 +2,6 @@
 import { useParams } from "react-router"
 import { getProductbyId } from "../data/productsapi"
 import { useEffect, useState } from "react";
-import { CartContext } from "../Context/CartContext"
 import { useContext } from "react";
 
 
