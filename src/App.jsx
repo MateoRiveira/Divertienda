@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import {BrowserRouter, Routes, Route} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { CartProvider } from './Context/CartContext'
+import CartContainer from './components/CartContainer'
 
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
 
       <Route  
       path='/carrito' 
-      element={<h1>Carrito de Compras</h1>}/>
+      element={<CartContainer/>}/>
 
       <Route 
       path='/detalle/:idParam' 

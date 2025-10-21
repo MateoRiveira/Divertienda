@@ -30,14 +30,18 @@
 
   }
 
-  function countCartItems(){
+  function countCartItems(){  
     let count = 0;
     cartItems.forEach(item => count += item.quantity)
     return count
   }
 
+  function removeItem(){
+   alert("Eliminado del carrito")
+  }
+
    return (
-      <cartContext.Provider value={{cartItems, addItem, countCartItems}}>
+      <cartContext.Provider value={{cartItems, addItem, countCartItems, removeItem}}>
          {children}
       </cartContext.Provider>
    )
