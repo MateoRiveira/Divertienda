@@ -3,7 +3,7 @@ import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import {BrowserRouter, Routes, Route} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
 
 
 const cartContext = createContext()
@@ -11,13 +11,35 @@ const CartProvider = cartContext.Provider
 
 export default function App() {
    
+  const [cartItems, setcartItems] = useState([])
 
+  function addItem(newItem){
+    const quantityCount = 1;
+    const newCart = structuredClone(cartItems)
+
+    const isinCart = cartItems.some(item => item.id === newItem.id)
+
+    if(isinCart){
+      const index = cartItems.findIndex(item => item.id === newItem.id)
+      newCart[index].quantity += quantityCount
+      alert("Agregaste otra unidad  al carrito")
+    }
+
+    else{
+      newItem.quantity = quantityCount
+      newCart.push(newItem)
+      alert("Agregaste al carrito")
+    }
+
+    setcartItems(newCart)
+
+  }
 
 
   return (
     
     <>
-    <CartProvider value="Hola Context">
+    <CartProvider value={{test: "Hola Context", cartItems, addItem}}>
     <BrowserRouter>
 
     <NavBar/>

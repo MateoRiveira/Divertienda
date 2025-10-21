@@ -4,7 +4,7 @@ export default function CartWidget(){
     const valueContext = useContext(cartContext)
     return(
         <>
-        <button className="cart"><span>🛒 {valueContext}</span></button>
+        <button className="cart"><span>🛒 {valueContext.cartItems.length}</span></button>
         </>
     )
 }

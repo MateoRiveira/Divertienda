@@ -2,6 +2,7 @@
 import { useParams } from "react-router"
 import { getProductbyId } from "../data/productsapi"
 import { useEffect, useState } from "react";
+import { cartContext } from "../App";
 import { useContext } from "react";
 
 
@@ -9,7 +10,7 @@ import { useContext } from "react";
 export default function ItemDetailContainer() {
     const {idParam} = useParams()
     const [product, Setproduct] = useState({loading: true});
-    const {addItem} = useContext(CartContext)
+    const {addItem} = useContext(cartContext)
     
     useEffect(() => {
         getProductbyId(idParam)
