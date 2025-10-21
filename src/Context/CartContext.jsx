@@ -36,8 +36,9 @@
     return count
   }
 
-  function removeItem(){
-   alert("Eliminado del carrito")
+  function removeItem(idtoRemove){
+   const newCart = cartItems.filter(itemInCart = itemInCart.id !== idtoRemove)
+   setcartItems(newCart)
   }
 
    return (
