@@ -6,17 +6,20 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import { CartProvider } from './Context/CartContext'
 import CartContainer from './components/CartContainer'
 import {getProducts} from './data/firebase'
+import { subirProductosAFirestore } from './data/firebase'
 
 export default function App() {
   getProducts();
 
   return (
     
+
     <>
     <CartProvider>
     <BrowserRouter>
 
     <NavBar/>
+    <button onClick={subirProductosAFirestore}>Exportar Array</button>
 
     <Routes>
       <Route 

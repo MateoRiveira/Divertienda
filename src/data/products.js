@@ -59,7 +59,7 @@ const products = [
   id: 7,
   title: "EA Sports FC 26",
   price: 69.99,
-  img: "https://placehold.co/300x300?text=EA+Sports+FC+26",
+  img: "/images/fc26.png",
   category: "Videojuegos",
   description: "El nuevo simulador de fútbol con licencias oficiales y modo carrera mejorado.",
   stock: 15
@@ -68,7 +68,7 @@ const products = [
   id: 8,
   title: "Hollow Knight Silksong",
   price: 6.99,
-  img: "https://placehold.co/300x300?text=Hollow+Knight+Silksong",
+  img: "/images/silksong.png",
   category: "Videojuegos",
   description: "La esperada secuela de Hollow Knight, un metroidvania lleno de acción y exploración.",
   stock: 85

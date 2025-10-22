@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDocs, getDoc, getFirestore, query, where } from "firebase/firestore"
-
+import { collection, doc, getDocs, getDoc, getFirestore, query, where, addDoc } from "firebase/firestore"
+import products from "./products"
 
 
 const firebaseConfig = {
@@ -57,9 +57,22 @@ export async function getProductsbyCategory(categoryParam) {
 }
 
 
+export async function createOrder(orderData) {
+    const ordersRef = collection(db, "orders");
+
+    const newDoc =  await addDoc(ordersRef, orderData)
+    return newDoc
+}
 
 
-
+export async function subirProductosAFirestore(params) {
+    for(let item of products) {
+        delete item.id;
+        const newDoc = await addDoc(collection(db, "products"),item)
+        console.log("item creado", newDoc.id)
+    }
+     
+}
 
 
 

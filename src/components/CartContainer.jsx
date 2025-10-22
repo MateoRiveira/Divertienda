@@ -1,9 +1,35 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { cartContext } from "../Context/CartContext"
 import { Link } from "react-router"
+import { createOrder } from "../data/firebase"
 
 export default function CartContainer(){
+    const [orderCreatedId, setorderCreated] = useState(false)
+
     const {cartItems, removeItem}= useContext(cartContext)
+
+    async function handleCheckout(){
+        const buyer = {name: "Makoto", email:"mk@yahoo.com", phone: "123123123"}
+        const total = 9999;
+
+        const newOrderConfirmed = await createOrder({cartItems, total, buyer,   date: new Date()});
+        console.log(newOrderConfirmed.toJSON());
+        alert(`Gracias por tu compra. Tu id de la orden es: ${newOrderConfirmed.id}`);
+
+        setorderCreated(newOrderConfirmed.id)
+
+        
+    }
+
+    if (orderCreatedId) {
+        return (
+            <div>
+                <h2>Gracias por tu compra</h2>
+                <p>Tu id de orden es: <strong>{orderCreatedId}</strong></p>
+            </div>
+        )
+
+    }
 
     if (cartItems.length === 0)
     {
@@ -33,8 +59,11 @@ export default function CartContainer(){
             </div>
 
           <button>Vaciar Carrito</button>
+
+          <button onClick={handleCheckout}>Confirmar Compra</button>
+
           <Link to="/checkout">
-          <button>Proceder a Pagar</button>
+          <button>Checkout - TODO</button>
           </Link>
           
 
