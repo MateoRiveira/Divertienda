@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
+import { getProducts,  getProductsbyCategory  } from "../data/firebase"
 import Item from "./Item"
-import getProducts, { getProductbyCategory } from "../data/productsapi"
 import { useParams } from "react-router"
 
 
 export default function ItemListContainer(props){
     const [products, setProducts] = useState([])
     const {categoryParam} = useParams()
-    getProductbyCategory(categoryParam)
+    getProductsbyCategory(categoryParam)
 
     useEffect(() => {
         if(categoryParam === undefined){
@@ -20,7 +20,7 @@ export default function ItemListContainer(props){
         }).catch((error)=> alert(`Error ${error}`))}
 
         else {
-            getProductbyCategory(categoryParam).then(response => setProducts(response))
+            getProductsbyCategory(categoryParam).then(response => setProducts(response)).catch(err => alert(err))
         }
     
     }, [categoryParam])

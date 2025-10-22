@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router"
-import { getProductbyId } from "../data/productsapi"
+import { getProductbyId } from "../data/firebase"
 import { useEffect, useState } from "react";
 import { cartContext } from "../Context/CartContext"
 import { useContext } from "react";
