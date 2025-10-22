@@ -5,9 +5,10 @@ import {BrowserRouter, Routes, Route} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { CartProvider } from './Context/CartContext'
 import CartContainer from './components/CartContainer'
-
+import app from './data/firebase'
 
 export default function App() {
+  console.log(app)
 
   return (
     

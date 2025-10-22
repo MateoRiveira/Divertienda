@@ -1,349 +1,393 @@
 
 const products = [
-  {
-    "id": 1,
-    "title": "PlayStation 5",
-    "price": 499.99,
-    "img": "https://placehold.co/300x300?text=PlayStation+5",
-    "category": "Consolas",
-    "description": "Consola de nueva generación de Sony con gráficos 4K y control DualSense con retroalimentación háptica."
-  },
-  {
-    "id": 2,
-    "title": "Xbox Series X",
-    "price": 499.99,
-    "img": "https://placehold.co/300x300?text=Xbox+Series+X",
-    "category": "Consolas",
-    "description": "Consola más potente de Microsoft, con soporte para juegos en 4K y disco de 1TB SSD."
-  },
-  {
-    "id": 3,
-    "title": "Nintendo Switch OLED",
-    "price": 349.99,
-    "img": "https://placehold.co/300x300?text=Nintendo+Switch+OLED",
-    "category": "Consolas",
-    "description": "Versión mejorada de la Nintendo Switch con pantalla OLED de 7 pulgadas y mejor audio."
-  },
-  {
-    "id": 4,
-    "title": "Steam Deck 512GB",
-    "price": 649.99,
-    "img": "https://placehold.co/300x300?text=Steam+Deck+512GB",
-    "category": "Consolas",
-    "description": "Consola portátil de Valve que permite jugar la mayoría de los juegos de PC en cualquier lugar."
-  },
-  {
-    "id": 5,
-    "title": "Gaming Laptop ASUS ROG Strix",
-    "price": 1599.99,
-    "img": "https://placehold.co/300x300?text=ASUS+ROG+Strix",
-    "category": "Computadoras",
-    "description": "Laptop gamer con procesador Ryzen 7, RTX 3060 y pantalla de 144Hz."
-  },
-  {
-    "id": 6,
-    "title": "PC Gamer Intel i9 + RTX 4090",
-    "price": 3499.99,
-    "img": "https://placehold.co/300x300?text=PC+Gamer+Intel+i9+RTX+4090",
-    "category": "Computadora",
-    "description": "PC de escritorio de alto rendimiento con tarjeta gráfica RTX 4090 y procesador Intel i9."
-  },
-  {
-    "id": 7,
-    "title": "EA Sports FC 26",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=EA+Sports+FC+26",
-    "category": "Videojuegos",
-    "description": "El nuevo simulador de fútbol con licencias oficiales y modo carrera mejorado."
-  },
-  {
-    "id": 8,
-    "title": "Hollow Knight Silksong",
-    "price": 6.99,
-    "img": "https://placehold.co/300x300?text=Hollow+Knight+Silksong",
-    "category": "Videojuegos",
-    "description": "La esperada secuela de Hollow Knight, un metroidvania lleno de acción y exploración."
-  },
-  {
-    "id": 9,
-    "title": "Persona 3 Reload",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Persona+3+Reload",
-    "category": "Videojuegos",
-    "description": "Remake completo de Persona 3 con gráficos modernos y sistema de combate actualizado."
-  },
-  {
-    "id": 10,
-    "title": "Persona 4 Golden",
-    "price": 39.99,
-    "img": "https://placehold.co/300x300?text=Persona+4+Golden",
-    "category": "Videojuegos",
-    "description": "Versión definitiva de Persona 4 con mejoras gráficas y nuevo contenido adicional."
-  },
-  {
-    "id": 11,
-    "title": "Persona 5 Royal",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Persona+5+Royal",
-    "category": "Videojuegos",
-    "description": "Edición mejorada de Persona 5 con nuevos personajes, eventos y mecánicas."
-  },
-  {
-    "id": 12,
-    "title": "Persona 3 Portable",
-    "price": 49.99,
-    "img": "https://placehold.co/300x300?text=Persona+3+Portable",
-    "category": "Videojuegos",
-    "description": "Versión portátil del clásico Persona 3 con opción de protagonista femenina."
-  },
-  {
-    "id": 13,
-    "title": "God of War Ragnarök",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=God+of+War+Ragnarok",
-    "category": "Videojuegos",
-    "description": "Acompaña a Kratos y Atreus en el desenlace épico de la saga nórdica."
-  },
-  {
-    "id": 14,
-    "title": "The Legend of Zelda: Tears of the Kingdom",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Zelda+Tears+of+the+Kingdom",
-    "category": "Videojuegos",
-    "description": "Secuela de Breath of the Wild, explora Hyrule con nuevas habilidades y libertad total."
-  },
-  {
-    "id": 15,
-    "title": "Red Dead Redemption 2",
-    "price": 39.99,
-    "img": "https://placehold.co/300x300?text=Red+Dead+Redemption+2",
-    "category": "Videojuegos",
-    "description": "Juego de mundo abierto ambientado en el Salvaje Oeste con una historia épica."
-  },
-  {
-    "id": 16,
-    "title": "Cyberpunk 2077: Phantom Liberty",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Cyberpunk+2077+Phantom+Liberty",
-    "category": "Videojuegos",
-    "description": "Expansión de Cyberpunk 2077 con nuevas áreas, historia y mejoras en el gameplay."
-  },
-  {
-    "id": 17,
-    "title": "Elden Ring",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Elden+Ring",
-    "category": "Videojuegos",
-    "description": "Juego de rol de mundo abierto desarrollado por FromSoftware en colaboración con George R.R. Martin."
-  },
-  {
-    "id": 18,
-    "title": "Mortal Kombat 1",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Mortal+Kombat+1",
-    "category": "Videojuegos",
-    "description": "Reinicio de la saga con nuevos personajes, fatalities espectaculares y mejor jugabilidad."
-  },
-  {
-    "id": 19,
-    "title": "Street Fighter 6",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Street+Fighter+6",
-    "category": "Videojuegos",
-    "description": "La nueva entrega del clásico juego de lucha con nuevos luchadores y modos de juego."
-  },
-  {
-    "id": 20,
-    "title": "Resident Evil 4 Remake",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Resident+Evil+4+Remake",
-    "category": "Videojuegos",
-    "description": "Remake del clásico survival horror con gráficos modernos y jugabilidad mejorada."
-  },
-  {
-    "id": 21,
-    "title": "Call of Duty: Modern Warfare III",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Call+of+Duty+MW3",
-    "category": "Videojuegos",
-    "description": "Nueva entrega de la saga Call of Duty con campaña épica y modos multijugador intensos."
-  },
-  {
-    "id": 22,
-    "title": "Assassin’s Creed Mirage",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Assassins+Creed+Mirage",
-    "category": "Videojuegos",
-    "description": "Vuelve a las raíces de la saga con una historia en Bagdad y sigilo clásico."
-  },
-  {
-    "id": 23,
-    "title": "Starfield",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Starfield",
-    "category": "Videojuegos",
-    "description": "Juego de rol espacial de Bethesda con exploración de galaxias y libertad total."
-  },
-  {
-    "id": 24,
-    "title": "Final Fantasy XVI",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Final+Fantasy+XVI",
-    "category": "Videojuegos",
-    "description": "Nueva entrega de la saga con combate en tiempo real y una historia épica."
-  },
-  {
-    "id": 25,
-    "title": "Diablo IV",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Diablo+IV",
-    "category": "Videojuegos",
-    "description": "Regreso del clásico ARPG con mazmorras, loot y multijugador online."
-  },
-  {
-    "id": 26,
-    "title": "Gran Turismo 7",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Gran+Turismo+7",
-    "category": "Videojuegos",
-    "description": "El simulador de conducción definitivo con cientos de autos y circuitos reales."
-  },
-  {
-    "id": 27,
-    "title": "Forza Horizon 5",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Forza+Horizon+5",
-    "category": "Videojuegos",
-    "description": "Conduce por un mapa inspirado en México con cientos de coches disponibles."
-  },
-  {
-    "id": 28,
-    "title": "Mario Kart 8 Deluxe",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Mario+Kart+8+Deluxe",
-    "category": "Videojuegos",
-    "description": "Juego de carreras arcade de Mario y sus amigos con todo el contenido adicional incluido."
-  },
-  {
-    "id": 29,
-    "title": "Super Smash Bros. Ultimate",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Super+Smash+Bros+Ultimate",
-    "category": "Videojuegos",
-    "description": "El crossover de lucha más grande de la historia con todos los personajes de Nintendo."
-  },
-  {
-    "id": 30,
-    "title": "Splatoon 3",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Splatoon+3",
-    "category": "Videojuegos",
-    "description": "Shooter multijugador de Nintendo con batallas de tinta llenas de color."
-  },
-  {
-    "id": 31,
-    "title": "Metroid Dread",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Metroid+Dread",
-    "category": "Videojuegos",
-    "description": "Juego de acción y exploración en 2D protagonizado por Samus Aran."
-  },
-  {
-    "id": 32,
-    "title": "Kirby and the Forgotten Land",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Kirby+Forgotten+Land",
-    "category": "Videojuegos",
-    "description": "Primera aventura 3D de Kirby en un mundo misterioso lleno de secretos."
-  },
-  {
-    "id": 33,
-    "title": "Minecraft",
-    "price": 29.99,
-    "img": "https://placehold.co/300x300?text=Minecraft",
-    "category": "Videojuegos",
-    "description": "Juego de construcción y supervivencia con bloques en un mundo infinito."
-  },
-  {
-    "id": 34,
-    "title": "The Sims 4",
-    "price": 39.99,
-    "img": "https://placehold.co/300x300?text=The+Sims+4",
-    "category": "Videojuegos",
-    "description": "Crea, diseña y controla la vida de tus Sims en este simulador social."
-  },
-  {
-    "id": 35,
-    "title": "Among Us",
-    "price": 9.99,
-    "img": "https://placehold.co/300x300?text=Among+Us",
-    "category": "Videojuegos",
-    "description": "Juego multijugador de deducción social donde debes descubrir al impostor."
-  },
-  {
-    "id": 36,
-    "title": "Valheim",
-    "price": 19.99,
-    "img": "https://placehold.co/300x300?text=Valheim",
-    "category": "Videojuegos",
-    "description": "Survival sandbox inspirado en la mitología vikinga."
-  },
-  {
-    "id": 37,
-    "title": "Baldur’s Gate 3",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Baldurs+Gate+3",
-    "category": "Videojuegos",
-    "description": "Juego de rol táctico basado en Dungeons & Dragons con decisiones que afectan la historia."
-  },
-  {
-    "id": 38,
-    "title": "Alan Wake II",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Alan+Wake+II",
-    "category": "Videojuegos",
-    "description": "Secuela del clásico thriller psicológico con gráficos de última generación."
-  },
-  {
-    "id": 39,
-    "title": "Dead Space Remake",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Dead+Space+Remake",
-    "category": "Videojuegos",
-    "description": "Remake del clásico survival horror espacial con atmósfera renovada."
-  },
-  {
-    "id": 40,
-    "title": "Hogwarts Legacy",
-    "price": 69.99,
-    "img": "https://placehold.co/300x300?text=Hogwarts+Legacy",
-    "category": "Videojuegos",
-    "description": "Juego de rol ambientado en el universo de Harry Potter con libertad para explorar Hogwarts."
-  },
-  {
-    "id": 41,
-    "title": "Lies of P",
-    "price": 59.99,
-    "img": "https://placehold.co/300x300?text=Lies+of+P",
-    "category": "Videojuegos",
-    "description": "Juego inspirado en Pinocho con combate soulslike y una atmósfera oscura."
-  },
-  {
-    "id": 42,
-    "title": "Sekiro: Shadows Die Twice",
-    "price": 49.99,
-    "img": "https://placehold.co/300x300?text=Sekiro+Shadows+Die+Twice",
-    "category": "Videojuegos",
-    "description": "Juego de acción y sigilo en el Japón Sengoku, desarrollado por FromSoftware."
-  },
-  {
-    "id": 43,
-    "title": "Dark Souls III",
-    "price": 39.99,
-    "img": "https://placehold.co/300x300?text=Dark+Souls+III",
-    "category": "Videojuegos",
-    "description": "La tercera entrega de la saga souls con combates intensos y dificultad elevada."
-  }
-];
+ {
+  id: 1,
+  title: "PlayStation 5",
+  price: 499.99,
+  img: "https://placehold.co/300x300?text=PlayStation+5",
+  category: "Consolas",
+  description: "Consola de nueva generación de Sony con gráficos 4K y control DualSense con retroalimentación háptica.",
+  stock: 45
+},
+{
+  id: 2,
+  title: "Xbox Series X",
+  price: 499.99,
+  img: "https://placehold.co/300x300?text=Xbox+Series+X",
+  category: "Consolas",
+  description: "Consola más potente de Microsoft, con soporte para juegos en 4K y disco de 1TB SSD.",
+  stock: 55
+},
+{
+  id: 3,
+  title: "Nintendo Switch OLED",
+  price: 349.99,
+  img: "https://placehold.co/300x300?text=Nintendo+Switch+OLED",
+  category: "Consolas",
+  description: "Versión mejorada de la Nintendo Switch con pantalla OLED de 7 pulgadas y mejor audio.",
+  stock: 35
+},
+{
+  id: 4,
+  title: "Steam Deck 512GB",
+  price: 649.99,
+  img: "https://placehold.co/300x300?text=Steam+Deck+512GB",
+  category: "Consolas",
+  description: "Consola portátil de Valve que permite jugar la mayoría de los juegos de PC en cualquier lugar.",
+  stock: 40
+},
+
+{
+  id: 5,
+  title: "Gaming Laptop ASUS ROG Strix",
+  price: 1599.99,
+  img: "https://placehold.co/300x300?text=ASUS+ROG+Strix",
+  category: "Computadoras",
+  description: "Laptop gamer con procesador Ryzen 7, RTX 3060 y pantalla de 144Hz.",
+  stock: 55
+},
+{
+  id: 6,
+  title: "PC Gamer Intel i9 + RTX 4090",
+  price: 3499.99,
+  img: "https://placehold.co/300x300?text=PC+Gamer+Intel+i9+RTX+4090",
+  category: "Computadora",
+  description: "PC de escritorio de alto rendimiento con tarjeta gráfica RTX 4090 y procesador Intel i9.",
+  stock: 25
+},
+{
+  id: 7,
+  title: "EA Sports FC 26",
+  price: 69.99,
+  img: "https://placehold.co/300x300?text=EA+Sports+FC+26",
+  category: "Videojuegos",
+  description: "El nuevo simulador de fútbol con licencias oficiales y modo carrera mejorado.",
+  stock: 15
+},
+{
+  id: 8,
+  title: "Hollow Knight Silksong",
+  price: 6.99,
+  img: "https://placehold.co/300x300?text=Hollow+Knight+Silksong",
+  category: "Videojuegos",
+  description: "La esperada secuela de Hollow Knight, un metroidvania lleno de acción y exploración.",
+  stock: 85
+},
+{
+  id: 9,
+  title: "Persona 3 Reload",
+  price: 69.99,
+  img: "/images/p3r.png",
+  category: "Videojuegos",
+  description: "Remake completo de Persona 3 con gráficos modernos y sistema de combate actualizado.",
+  stock: 70
+},
+{
+  id: 10,
+  title: "Persona 4 Golden",
+  price: 39.99,
+  img: "https://placehold.co/300x300?text=Persona+4+Golden",
+  category: "Videojuegos",
+  description: "Versión definitiva de Persona 4 con mejoras gráficas y nuevo contenido adicional.",
+  stock: 70
+},
+{
+  id: 11,
+  title: "Persona 5 Royal",
+  price: 59.99,
+  img: "https://placehold.co/300x300?text=Persona+5+Royal",
+  category: "Videojuegos",
+  description: "Edición mejorada de Persona 5 con nuevos personajes, eventos y mecánicas.",
+  stock: 120
+},
+{
+  id: 12,
+  title: "Persona 3 Portable",
+  price: 49.99,
+  img: "https://placehold.co/300x300?text=Persona+3+Portable",
+  category: "Videojuegos",
+  description: "Versión portátil del clásico Persona 3 con opción de protagonista femenina.",
+  stock: 55
+},
+{
+  id: 13,
+  title: "God of War Ragnarök",
+  price: 69.99,
+  img: "https://placehold.co/300x300?text=God+of+War+Ragnarok",
+  category: "Videojuegos",
+  description: "Acompaña a Kratos y Atreus en el desenlace épico de la saga nórdica.",
+  stock: 35
+},
+{
+  id: 14,
+  title: "The Legend of Zelda: Tears of the Kingdom",
+  price: 69.99,
+  img: "https://placehold.co/300x300?text=Zelda+Tears+of+the+Kingdom",
+  category: "Videojuegos",
+  description: "Secuela de Breath of the Wild, explora Hyrule con nuevas habilidades y libertad total.",
+  stock: 35
+},
+{
+  id: 15,
+  title: "Red Dead Redemption 2",
+  price: 39.99,
+  img: "https://placehold.co/300x300?text=Red+Dead+Redemption+2",
+  category: "Videojuegos",
+  description: "Juego de mundo abierto ambientado en el Salvaje Oeste con una historia épica.",
+  stock: 45
+},
+{
+    id: 16,
+    title: "Cyberpunk 2077: Phantom Liberty",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Cyberpunk+2077+Phantom+Liberty",
+    category: "Videojuegos",
+    description: "Expansión de Cyberpunk 2077 con nuevas áreas, historia y mejoras en el gameplay.",
+    stock: 45
+},
+{
+    id: 17,
+    title: "Elden Ring",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Elden+Ring",
+    category: "Videojuegos",
+    description: "Juego de rol de mundo abierto desarrollado por FromSoftware en colaboración con George R.R. Martin.",
+    stock: 55
+},
+{
+    id: 18,
+    title: "Mortal Kombat 1",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Mortal+Kombat+1",
+    category: "Videojuegos",
+    description: "Reinicio de la saga con nuevos personajes, fatalities espectaculares y mejor jugabilidad.",
+    stock: 10
+},
+{
+    id: 19,
+    title: "Street Fighter 6",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Street+Fighter+6",
+    category: "Videojuegos",
+    description: "La nueva entrega del clásico juego de lucha con nuevos luchadores y modos de juego.",
+    stock: 35
+},
+{
+    id: 20,
+    title: "Resident Evil 4 Remake",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Resident+Evil+4+Remake",
+    category: "Videojuegos",
+    description: "Remake del clásico survival horror con gráficos modernos y jugabilidad mejorada.",
+    stock: 55
+},
+{
+    id: 21,
+    title: "Call of Duty: Modern Warfare III",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Call+of+Duty+MW3",
+    category: "Videojuegos",
+    description: "Nueva entrega de la saga Call of Duty con campaña épica y modos multijugador intensos.",
+    stock: 8
+},
+{
+    id: 22,
+    title: "Assassin’s Creed Mirage",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Assassins+Creed+Mirage",
+    category: "Videojuegos",
+    description: "Vuelve a las raíces de la saga con una historia en Bagdad y sigilo clásico.",
+    stock: 12
+},
+{
+    id: 23,
+    title: "Starfield",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Starfield",
+    category: "Videojuegos",
+    description: "Juego de rol espacial de Bethesda con exploración de galaxias y libertad total.",
+    stock: 34
+},
+{
+    id: 24,
+    title: "Final Fantasy XVI",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Final+Fantasy+XVI",
+    category: "Videojuegos",
+    description: "Nueva entrega de la saga con combate en tiempo real y una historia épica.",
+    stock: 34
+},
+{
+    id: 25,
+    title: "Diablo IV",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Diablo+IV",
+    category: "Videojuegos",
+    description: "Regreso del clásico ARPG con mazmorras, loot y multijugador online.",
+    stock: 20
+},
+{
+    id: 26,
+    title: "Gran Turismo 7",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Gran+Turismo+7",
+    category: "Videojuegos",
+    description: "El simulador de conducción definitivo con cientos de autos y circuitos reales.",
+    stock: 25
+},
+{
+    id: 27,
+    title: "Forza Horizon 5",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Forza+Horizon+5",
+    category: "Videojuegos",
+    description: "Conduce por un mapa inspirado en México con cientos de coches disponibles.",
+    stock: 25
+},
+{
+    id: 28,
+    title: "Mario Kart 8 Deluxe",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Mario+Kart+8+Deluxe",
+    category: "Videojuegos",
+    description: "Juego de carreras arcade de Mario y sus amigos con todo el contenido adicional incluido.",
+    stock: 25
+},
+{
+    id: 29,
+    title: "Super Smash Bros. Ultimate",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Super+Smash+Bros+Ultimate",
+    category: "Videojuegos",
+    description: "El crossover de lucha más grande de la historia con todos los personajes de Nintendo.",
+    stock: 25
+},
+{
+    id: 30,
+    title: "Splatoon 3",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Splatoon+3",
+    category: "Videojuegos",
+    description: "Shooter multijugador de Nintendo con batallas de tinta llenas de color.",
+    stock: 25
+},
+{
+    id: 31,
+    title: "Metroid Dread",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Metroid+Dread",
+    category: "Videojuegos",
+    description: "Juego de acción y exploración en 2D protagonizado por Samus Aran.",
+    stock: 25
+},
+{
+    id: 32,
+    title: "Kirby and the Forgotten Land",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Kirby+Forgotten+Land",
+    category: "Videojuegos",
+    description: "Primera aventura 3D de Kirby en un mundo misterioso lleno de secretos.",
+    stock: 25
+},
+{
+    id: 33,
+    title: "Minecraft",
+    price: 29.99,
+    img: "https://placehold.co/300x300?text=Minecraft",
+    category: "Videojuegos",
+    description: "Juego de construcción y supervivencia con bloques en un mundo infinito.",
+    stock: 25
+},
+{
+    id: 34,
+    title: "The Sims 4",
+    price: 39.99,
+    img: "https://placehold.co/300x300?text=The+Sims+4",
+    category: "Videojuegos",
+    description: "Crea, diseña y controla la vida de tus Sims en este simulador social.",
+    stock: 25
+},
+{
+    id: 35,
+    title: "Among Us",
+    price: 9.99,
+    img: "https://placehold.co/300x300?text=Among+Us",
+    category: "Videojuegos",
+    description: "Juego multijugador de deducción social donde debes descubrir al impostor.",
+    stock: 25
+},
+{
+    id: 36,
+    title: "Valheim",
+    price: 19.99,
+    img: "https://placehold.co/300x300?text=Valheim",
+    category: "Videojuegos",
+    description: "Survival sandbox inspirado en la mitología vikinga.",
+    stock: 25
+},
+{
+    id: 37,
+    title: "Baldur’s Gate 3",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Baldurs+Gate+3",
+    category: "Videojuegos",
+    description: "Juego de rol táctico basado en Dungeons & Dragons con decisiones que afectan la historia.",
+    stock: 25
+},
+{
+    id: 38,
+    title: "Alan Wake II",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Alan+Wake+II",
+    category: "Videojuegos",
+    description: "Secuela del clásico thriller psicológico con gráficos de última generación.",
+    stock: 25
+},
+{
+    id: 39,
+    title: "Dead Space Remake",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Dead+Space+Remake",
+    category: "Videojuegos",
+    description: "Remake del clásico survival horror espacial con atmósfera renovada.",
+    stock: 25
+},
+{
+    id: 40,
+    title: "Hogwarts Legacy",
+    price: 69.99,
+    img: "https://placehold.co/300x300?text=Hogwarts+Legacy",
+    category: "Videojuegos",
+    description: "Juego de rol ambientado en el universo de Harry Potter con libertad para explorar Hogwarts.",
+    stock: 25
+},
+{
+    id: 41,
+    title: "Lies of P",
+    price: 59.99,
+    img: "https://placehold.co/300x300?text=Lies+of+P",
+    category: "Videojuegos",
+    description: "Juego inspirado en Pinocho con combate soulslike y una atmósfera oscura.",
+    stock: 25
+},
+{
+    id: 42,
+    title: "Sekiro: Shadows Die Twice",
+    price: 49.99,
+    img: "https://placehold.co/300x300?text=Sekiro+Shadows+Die+Twice",
+    category: "Videojuegos",
+    description: "Juego de acción y sigilo en el Japón Sengoku, desarrollado por FromSoftware.",
+    stock: 25
+},
+{
+    id: 43,
+    title: "Dark Souls III",
+    price: 39.99,
+    img: "https://placehold.co/300x300?text=Dark+Souls+III",
+    category: "Videojuegos",
+    description: "La tercera entrega de la saga souls con combates intensos y dificultad elevada.",
+    stock: 25
+}
+]; 
 
 export default products
