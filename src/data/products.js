@@ -31,7 +31,7 @@ const products = [
   id: 4,
   title: "Steam Deck 512GB",
   price: 649.99,
-  img: "images/steamdeck.jpg",
+  img: "/images/steamdeck.jpg",
   category: "Consolas",
   description: "Consola portátil de Valve que permite jugar la mayoría de los juegos de PC en cualquier lugar.",
   stock: 40
@@ -131,7 +131,7 @@ const products = [
   id: 15,
   title: "Red Dead Redemption 2",
   price: 39.99,
-  img: "images/reddead2.jpeg",
+  img: "/images/reddead2.jpeg",
   category: "Videojuegos",
   description: "Juego de mundo abierto ambientado en el Salvaje Oeste con una historia épica.",
   stock: 45
@@ -140,7 +140,7 @@ const products = [
     id: 16,
     title: "Cyberpunk 2077: Phantom Liberty",
     price: 59.99,
-    img: "images/cyberpunk.jpeg",
+    img: "/images/cyberpunk.jpeg",
     category: "Videojuegos",
     description: "Expansión de Cyberpunk 2077 con nuevas áreas, historia y mejoras en el gameplay.",
     stock: 45
@@ -149,7 +149,7 @@ const products = [
     id: 17,
     title: "Elden Ring",
     price: 59.99,
-    img: "images/eldenring.jpg",
+    img: "/images/eldenring.jpg",
     category: "Videojuegos",
     description: "Juego de rol de mundo abierto desarrollado por FromSoftware en colaboración con George R.R. Martin.",
     stock: 55
@@ -167,7 +167,7 @@ const products = [
     id: 19,
     title: "Street Fighter 6",
     price: 59.99,
-    img: "images/sf6.jpeg",
+    img: "/images/sf6.jpeg",
     category: "Videojuegos",
     description: "La nueva entrega del clásico juego de lucha con nuevos luchadores y modos de juego.",
     stock: 35
@@ -176,7 +176,7 @@ const products = [
     id: 20,
     title: "Resident Evil 4 Remake",
     price: 59.99,
-    img: "images/re4remake.jpeg",
+    img: "/images/re4remake.jpeg",
     category: "Videojuegos",
     description: "Remake del clásico survival horror con gráficos modernos y jugabilidad mejorada.",
     stock: 55
@@ -284,7 +284,7 @@ const products = [
     id: 32,
     title: "Kirby and the Forgotten Land",
     price: 59.99,
-    img: "images/kirby.jpeg",
+    img: "/images/kirby.jpeg",
     category: "Videojuegos",
     description: "Primera aventura 3D de Kirby en un mundo misterioso lleno de secretos.",
     stock: 25
@@ -302,7 +302,7 @@ const products = [
     id: 34,
     title: "The Sims 4",
     price: 39.99,
-    img: "images/sims4.jpeg",
+    img: "/images/sims4.jpeg",
     category: "Videojuegos",
     description: "Crea, diseña y controla la vida de tus Sims en este simulador social.",
     stock: 25
@@ -329,7 +329,7 @@ const products = [
     id: 37,
     title: "Baldur’s Gate 3",
     price: 69.99,
-    img: "images/baldur3.jpeg",
+    img: "/images/baldur3.jpeg",
     category: "Videojuegos",
     description: "Juego de rol táctico basado en Dungeons & Dragons con decisiones que afectan la historia.",
     stock: 25
@@ -383,7 +383,7 @@ const products = [
     id: 43,
     title: "Dark Souls III",
     price: 39.99,
-    img: "images/dk3.jpg",
+    img: "/images/dk3.jpg",
     category: "Videojuegos",
     description: "La tercera entrega de la saga souls con combates intensos y dificultad elevada.",
     stock: 25
