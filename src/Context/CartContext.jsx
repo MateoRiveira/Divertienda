@@ -41,8 +41,12 @@
    setcartItems(newCart)
   }
 
+  function clearCart(){
+    setcartItems([])
+  }
+
    return (
-      <cartContext.Provider value={{cartItems, addItem, countCartItems, removeItem}}>
+      <cartContext.Provider value={{cartItems, addItem, countCartItems, removeItem, clearCart}}>
          {children}
       </cartContext.Provider>
    )

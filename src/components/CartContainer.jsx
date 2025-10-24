@@ -2,30 +2,36 @@ import { useContext, useState } from "react"
 import { cartContext } from "../Context/CartContext"
 import { Link } from "react-router"
 import { createOrder } from "../data/firebase"
+import FormCheckout from "./FormCheckout"
+
+
 
 export default function CartContainer(){
-    const [orderCreatedId, setorderCreated] = useState(false)
+    const [orderCreatedId, setorderCreated] = useState(null)
 
-    const {cartItems, removeItem}= useContext(cartContext)
+    const {cartItems, removeItem, clearCart}= useContext(cartContext)
 
-    async function handleCheckout(){
-        const buyer = {name: "Makoto", email:"mk@yahoo.com", phone: "123123123"}
-        const total = 9999;
+    async function handleCheckout(buyer){
 
-        const newOrderConfirmed = await createOrder({cartItems, total, buyer,   date: new Date()});
-        console.log(newOrderConfirmed.toJSON());
-        alert(`Gracias por tu compra. Tu id de la orden es: ${newOrderConfirmed.id}`);
+        const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        const newOrder = {
+            buyer,
+            items: cartItems.map(({id, title, price, quantity}) => ({id, title, price, quantity})),
+            total,
+            date: new Date(), };
 
-        setorderCreated(newOrderConfirmed.id)
-
-        
+        const newOrderConfirmed = await createOrder(newOrder);
+        setorderCreated(newOrderConfirmed.id);
+        clearCart()   
     }
+
 
     if (orderCreatedId) {
         return (
             <div>
                 <h2>Gracias por tu compra</h2>
                 <p>Tu id de orden es: <strong>{orderCreatedId}</strong></p>
+                <Link to="/">Volver al Inicio</Link>
             </div>
         )
 
@@ -33,13 +39,14 @@ export default function CartContainer(){
 
     if (cartItems.length === 0)
     {
-        return <div> Tu Carrito de compras esta vacio <button>Ir al Inicio</button></div>
+        return <div> Tu Carrito de compras esta vacio <Link to="/"><button>Ir al Inicio</button></Link></div>
     }
     return (
         <>
         <section>
+            <h2>Tu Carrito de Compras: </h2>
             <div style={{display: "flex", gap:"20px"}}>
-                <h2>Tu Carrito de Compras: </h2>
+                
                 <div>
                     {
 
@@ -55,17 +62,10 @@ export default function CartContainer(){
                     }
                 </div>
                 <hr />
-                <h4>Total a Pagar: 1000$</h4>
+                <h4>Total a Pagar: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</h4>
             </div>
-
-          <button>Vaciar Carrito</button>
-
-          <button onClick={handleCheckout}>Confirmar Compra</button>
-
-          <Link to="/checkout">
-          <button>Checkout - TODO</button>
-          </Link>
-          
+           <FormCheckout handleCheckout={handleCheckout}/>
+                    
 
             
         </section>
