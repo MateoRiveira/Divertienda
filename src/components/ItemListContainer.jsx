@@ -14,7 +14,7 @@ export default function ItemListContainer(props){
         console.log("1. Peticion de Datos")
         const promiseData = getProducts()
         promiseData.then((respuesta) => {
-            console.log ("3. Datos Recibidos...", respuesta)
+            console.log ("2. Datos Recibidos...", respuesta)
             setProducts(respuesta)
         
         }).catch((error)=> alert(`Error ${error}`))}
@@ -30,7 +30,7 @@ export default function ItemListContainer(props){
     <section>
         <h2>{props.greeting}</h2>
         <p>Nuestros Productos</p>
-        <div>
+        <div className="products-container">
         {
             products.map( function(item)
         {return <Item

@@ -1,3 +1,4 @@
+ import Swal from 'sweetalert2'
  import { createContext, useState } from "react";
 
  
@@ -17,13 +18,23 @@
     if(isinCart){
       const index = cartItems.findIndex(item => item.id === newItem.id)
       newCart[index].quantity += quantityCount
-      alert("Agregaste otra unidad  al carrito")
+      Swal.fire({
+        title: 'Productos Agregados ✅',
+        text: '"Agregaste otra unidad  al carrito"',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    })
     }
 
     else{
       newItem.quantity = quantityCount
       newCart.push(newItem)
-      alert("Agregaste al carrito")
+            Swal.fire({
+        title: 'Producto Agregado ✅',
+        text: '"Agregaste una unidad al carrito"',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    })
     }
 
     setcartItems(newCart)

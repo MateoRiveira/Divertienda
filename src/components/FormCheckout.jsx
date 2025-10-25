@@ -1,3 +1,4 @@
+ import Swal from 'sweetalert2'
 import { useState } from "react";
 
 export default function FormCheckout(props) {
@@ -19,6 +20,11 @@ export default function FormCheckout(props) {
     function handleSubmit(event){
         event.preventDefault()
         alert("Form enviado")
+              Swal.fire({
+                title: 'Form Enviado',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            })
         props.handleCheckout(formData)
     }
 
