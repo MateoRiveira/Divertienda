@@ -19,7 +19,7 @@ export default function App() {
     <BrowserRouter>
 
     <NavBar/>
-    <button onClick={subirProductosAFirestore}>Exportar Array</button>
+    
 
     <Routes>
       <Route 
