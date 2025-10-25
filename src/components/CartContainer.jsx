@@ -62,7 +62,7 @@ export default function CartContainer(){
                     }
                 </div>
                 <hr />
-                <h4>Total a Pagar: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</h4>
+                <h4 style={{fontSize:"30px", flexDirection: "row"}}>Total a Pagar: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</h4>
             </div>
            <FormCheckout handleCheckout={handleCheckout}/>
                     
