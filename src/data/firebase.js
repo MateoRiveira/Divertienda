@@ -5,12 +5,12 @@ import products from "./products"
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCOzy2W2we_0Bb_RtLZio8AeOAug4RoDlc",
-  authDomain: "divertienda-react.firebaseapp.com",
-  projectId: "divertienda-react",
-  storageBucket: "divertienda-react.firebasestorage.app",
-  messagingSenderId: "139918200636",
-  appId: "1:139918200636:web:72862dc3799fd1874dd839"
+  apiKey: import.meta.env.VITE_FIRESTORE_APIKEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTHDOMAIN ,
+  projectId: import.meta.env.VITE_FIRESTORE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGEBUCKET ,
+  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGINDSENDERID ,
+  appId: import.meta.env.VITE_FIRESTORE_APPID
 };
 
 
